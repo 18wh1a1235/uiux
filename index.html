@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/jquery3.1.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login_image">
+        <img src="images/bg_2.svg" />
+      </div>
+      <div class="login_info">
+        <div class="user_ico">
+          <img src="images/user.png" />
+        </div>
+        <h2>WELCOME</h2>
+        <div class="form_container">
+          <div class="input_wrapper userName">
+            <input type="text" placeholder="Username" />
+            <img class="ico_ user_" src="images/user.svg" />
+          </div>
+          <div class="input_wrapper password">
+            <input
+              type="password"
+              placeholder="Password"
+              class="togglePassword"
+            />
+            <img class="ico_ user_" src="images/password.svg" />
+            <div class="eye_">
+              <img src="images/eye.svg" class="hidden_eye" />
+            </div>
+            <div class="forgotpw">Forgot Password</div>
+          </div>
+          <div class="cta">Login</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".eye_").click(function() {
+          $(this).toggleClass("active");
+          if ($(this).hasClass("active")) {
+            $(this).html(`
+                <img src="images/eye-open.svg" class="hidden_eye" />                
+            `);
+            $(".togglePassword").prop("type", "text");
+          } else {
+            $(this).html(`
+              <img src="images/eye.svg" class="hidden_eye" />
+            `);
+            $(".togglePassword").prop("type", "password");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
