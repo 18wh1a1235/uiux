@@ -4,23 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Circle</title>
+    <title>Responsive CSS vertical slider with thumbnails</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="loader">
-        <svg viewBox="0 0 120 120" version="1.1" xmin="http://www.w3.org/2000/svg">
+    <div class="container">
+        <h1 class="abs_">Responsive <br><span>CSS vertical slider</span> <br>with thumbnails</h1>
+        <ul class="thumbnails">
+            <li>
+                <a href="#slide1"><img src="images/1.jpg" /></a>
+            </li>
+            <li>
+                <a href="#slide2"><img src="images/2.jpg" /></a>
+            </li>
+            <li>
+                <a href="#slide3"><img src="images/3.jpg" /></a>
+            </li>
+            <li>
+                <a href="#slide4"><img src="images/4.jpg" /></a>
+            </li>
+            <li>
+                <a href="#slide5"><img src="images/5.jpg" /></a>
+            </li>
+        </ul>
+        <ul class="slides">
+            <li id="slide1"><img src="images/1.jpg" alt="" /></li>
+            <li id="slide2"><img src="images/2.jpg" alt="" /></li>
+            <li id="slide3"><img src="images/3.jpg" alt="" /></li>
+            <li id="slide4"><img src="images/4.jpg" alt="" /></li>
+            <li id="slide5"><img src="images/5.jpg" alt="" /></li>
+        </ul>
 
-            <circle class="load one" cx="60" cy="60" r="40" />
-            <circle class="load two" cx="60" cy="60" r="40" />
-            <circle class="load three" cx="60" cy="60" r="40" />
-            <g>
-                <circle class="point one" cx="45" cy="70" r="5" />
-                <circle class="point two" cx="60" cy="70" r="5" />
-                <circle class="point three" cx="75" cy="70" r="5" />
-            </g>
-        </svg>
     </div>
 </body>
 
