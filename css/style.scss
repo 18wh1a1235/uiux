@@ -1,98 +1,42 @@
-body {
-  box-sizing: border-box;
-  height: 100%;
-  overflow:hidden;
-  background:linear-gradient(to right, #eee, #222222);
-}
-
-*{
-  box-sizing: border-box;
+* {
   margin: 0;
-  padding: 0;
+  padding: 0;  
 }
-
-.container {
-  display: flex;
-  justify-content: flex-end;
-  position:relative;
-  h1{
-      font-size:8vh;
-      position:absolute;
-      left:38vh;
-      top:50%;
-      transform:translate(-50%, -50%);
-      display:inline-block;
-      font-family: sans-serif;
-      span{
-          color:tomato;
-      }
-  }
+$exo:'Exo 2';
+$bg_color:#e8edf0;
+$gradient:#2ef4f7;
+body{
+  background-color:$bg_color;
+  font-family: $exo;
+  overflow:hidden;
+  position: relative;
+  width:100%;
+  height:100vh;
 }
-
-.thumbnails {
+.container{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
   flex-direction: column;
-  line-height: 0;
-  list-style-type: none;
-  
-  li {
-    flex: auto; 
-  }
-
-  a {
-    display: block;
-  }
-  
-  img {
-    width: 30vmin;
-    height: 20vmin;
-    object-fit: cover;
-    object-position: top;
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-top:100px;
+    li{
+      width:150px;
+      cursor:pointer;
+      text-transform: uppercase;
+    }
   }
 }
-
-.slides {
-  overflow: hidden;
-  width: 67vmin;
-  height: 100vmin;
-  list-style-type: none;
-  li {
-    width: 67vmin;
-    height: 100vmin;
-    position: absolute;
-    z-index: 1;
-  }
-  
-  img {
-    height: 100vmin;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-
-.slides li:target {
-  z-index: 3;
-  -webkit-animation: slide 1s 1;
-}
-
-.slides li:not(:target) {
-  -webkit-animation: hidden 1s 1;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes hidden {
-  0% {
-    z-index: 2;
-  }
-  100% {
-    z-index: 2;
-  }
+.itemData{
+  width:720px;
+  margin:100px auto;
+  background-color:#bdbdbd;
+  padding:50px;
+  box-sizing: border-box;
+  text-align: center;
 }
