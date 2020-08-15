@@ -5,38 +5,77 @@
 $exo:'Exo 2';
 $bg_color:#e8edf0;
 $gradient:#2ef4f7;
+.d_flex{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
 body{
+  @extend .d_flex;
   background-color:$bg_color;
   font-family: $exo;
   overflow:hidden;
   position: relative;
-  width:100%;
   height:100vh;
 }
+
 .container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  flex-direction: column;
-  ul{
-    display: flex;
-    justify-content: center;
+  display:block;
+  max-width:1150px;
+  width:90%;
+  .tab_container{
+    display:flex;
+    justify-content: flex-end;
     align-items: center;
-    list-style-type: none;
-    margin-top:100px;
-    li{
-      width:150px;
-      cursor:pointer;
-      text-transform: uppercase;
+    margin-bottom:15px;
+    ul{
+      margin:0;
+      padding:0;
+      list-style-type: none;
+      @extend .d_flex;
+      justify-content: flex-end;
+      width:100%;
+      li{
+        width:150px;
+        height:50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        cursor:pointer;
+        position:relative;
+        font-size:20px;
+        +li{
+          margin-left:15px;
+        }
+        &.active{
+          color:tomato;
+          &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            bottom:5px;
+            width:30px;
+            height:2px;
+            background-color:tomato;
+            transform:translateX(-50%);
+          }
+        }
+       
+      }
     }
   }
 }
-.itemData{
-  width:720px;
-  margin:100px auto;
-  background-color:#bdbdbd;
-  padding:50px;
-  box-sizing: border-box;
-  text-align: center;
+.product_data{
+  width:100%;
+  @extend .d_flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  .item{
+    width:calc(95% / 4);
+    img{
+      width:100%;
+    }
+  }
 }
