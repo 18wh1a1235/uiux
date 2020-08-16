@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Works Design</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery3.1.0.min.js"></script>
+    <script src="js/isotope.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item_header">
+            <h3>Featured Works</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Obcaecati, praesentium?</p>
+        </div>
+        <div class="filter_">
+            <ul>
+                <li class="item active" data-filter="">All</li>
+                <li class="item" data-filter=".uiDesitn">UI DESIGN</li>
+                <li class="item" data-filter=".html">HTML / CSS</li>
+                <li class="item" data-filter=".javascript">JS / JQUERY</li>
+                <li class="item" data-filter=".reactjs">REACT JS</li>
+                <li class="item" data-filter=".php">PHP</li>
+            </ul>
+        </div>
+        <div class="item_wrapper">
+            <div class="filter_item uiDesitn">UI Design</div>
+            <div class="filter_item small javascript">Javascript</div>
+            <div class="filter_item reactjs">React Js</div>
+            <div class="filter_item reactjs">React Js</div>
+            <div class="filter_item html">HTML and CSS</div>
+            <div class="filter_item small javascript">Javascript</div>
+            <div class="filter_item small php">PHP</div>
+            <div class="filter_item small php">PHP</div>
+
+        </div>
+    </div>
+    <script>
+        var $grid = $(".item_wrapper").isotope({
+            itemSelector: '.filter_item'
+        });
+        $(".item").click(function () {
+            var filterValue = $(this).attr("data-filter");
+            console.log(filterValue);
+            //for add and remove class
+            $(".item").removeClass("active");
+            $(this).addClass("active");
+
+            //add filter
+            $grid.isotope({ filter: filterValue });
+        })
+    </script>
+</body>
+
+</html>

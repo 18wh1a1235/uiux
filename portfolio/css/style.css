@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #edf1fd;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: block;
+  margin: 20px auto 30px auto;
+  max-width: 1120px;
+  width: 90%;
+}
+
+.container .item_header {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container .item_header h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: tomato;
+}
+
+.container .item_header p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.filter_ {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.filter_ ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+
+.filter_ ul li {
+  display: inline-block;
+  width: 100px;
+  margin: 0;
+  padding: 10px 15px;
+  border: 1px solid #bdbdbd;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.filter_ ul li:hover {
+  background-color: tomato;
+  color: #fff;
+}
+
+.filter_ ul li.active {
+  background-color: tomato;
+  color: #fff;
+  border-color: tomato;
+}
+
+.filter_ ul li.active:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid tomato;
+}
+
+.item_wrapper {
+  display: block;
+  width: 100%;
+}
+
+.item_wrapper .filter_item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 20px;
+  width: calc(97% / 4 - 20px);
+  height: 250px;
+  margin-bottom: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.item_wrapper .filter_item.small {
+  height: 150px;
+}
+
+.uiDesitn {
+  background-color: #3f51b5;
+}
+
+.javascript {
+  background-color: #ff9800;
+}
+
+.html {
+  background-color: blue;
+}
+
+.reactjs {
+  background-color: #03a9f4;
+}
+
+.php {
+  background-color: #3f51b5;
+}
+/*# sourceMappingURL=style.css.map */
