@@ -4,65 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Timeline Concept::#1</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery3.1.0.min.js"></script>
-    <script src="js/isotope.js"></script>
 </head>
 
 <body>
-    <button class="button is-checked" data-filter="">any</button>
-    <button class="button" data-filter=".small">small</button>
-    <button class="button" data-filter=".wide">wide</button>
-    <button class="button" data-filter=".big">big</button>
-    <button class="button" data-filter=".tall">tall</button>
-
-    <div class="grid">
-        <div class="color-shape small round red"></div>
-        <div class="color-shape small round blue"></div>
-        <div class="color-shape small round yellow"></div>
-        <div class="color-shape small square red"></div>
-        <div class="color-shape small square blue"></div>
-        <div class="color-shape small square yellow"></div>
-        <div class="color-shape wide round red"></div>
-        <div class="color-shape wide round blue"></div>
-        <div class="color-shape wide round yellow"></div>
-        <div class="color-shape wide square red"></div>
-        <div class="color-shape wide square blue"></div>
-        <div class="color-shape wide square yellow"></div>
-        <div class="color-shape big round red"></div>
-        <div class="color-shape big round blue"></div>
-        <div class="color-shape big round yellow"></div>
-        <div class="color-shape big square red"></div>
-        <div class="color-shape big square blue"></div>
-        <div class="color-shape big square yellow"></div>
-        <div class="color-shape tall round red"></div>
-        <div class="color-shape tall round blue"></div>
-        <div class="color-shape tall round yellow"></div>
-        <div class="color-shape tall square red"></div>
-        <div class="color-shape tall square blue"></div>
-        <div class="color-shape tall square yellow"></div>
+    <div class="container">
+        <h1>Timeline Concept :: #1</h1>
+        <div class="timeline">
+            <div class="item" data-time="2018">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo deserunt placeat impedit?</p>
+            </div>
+            <div class="item" data-time="2019">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo deserunt placeat impedit?</p>
+            </div>
+            <div class="item" data-time="2020">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quo deserunt placeat impedit?</p>
+            </div>
+        </div>
     </div>
-
-    <script>
-        // external js: isotope.pkgd.js
-
-        // init Isotope
-        var $grid = $('.grid').isotope({
-            itemSelector: '.color-shape'
-        });
-        $('.button').click(function (event) {
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue });
-            //add and remove class on button
-            $(".button").removeClass("is-checked");
-            $(this).addClass("is-checked");
-        });
-
-
-    </script>
 </body>
 
 </html>
