@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 5vh;
+  margin: 4vh 0;
+  color: tomato;
+}
+
+.lazy_wrapper {
+  position: relative;
+  background-color: #eee;
+  padding-bottom: 91%;
+}
+
+.lazy_wrapper img {
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.loading__ img {
+  opacity: 0;
+}
+
+.loader {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.loader .point {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-animation: bounce 1s infinite ease-in-out;
+          animation: bounce 1s infinite ease-in-out;
+}
+
+.loader .point + .point {
+  margin-left: 10px;
+}
+
+.loader .point.one {
+  background-color: tomato;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.loader .point.two {
+  background-color: red;
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.loader .point.three {
+  background-color: blue;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=style.css.map */
