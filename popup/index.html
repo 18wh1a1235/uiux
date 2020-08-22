@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Popup</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="click_me">
+        click me
+    </div>
+    <div class="popup_container">
+        <div class="popup">
+            <div class="close">
+                <i class="fa fa-times"></i>
+            </div>
+            <h2>Animated Popup</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, odit corporis? Autem quia vero, ad
+                nisi unde voluptatem eius minima ipsum quis, nostrum, voluptate placeat mollitia neque cupiditate
+                facere. Quibusdam.</p>
+
+            <div class="close_me">
+                Close me
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".click_me").click(function () {
+                $(".popup_container").addClass("show");
+            })
+            $(".close").click(function () {
+                $(".popup_container").removeClass("show");
+            })
+            $(".close_me").click(function () {
+                $(".popup_container").removeClass("show");
+            })
+        })
+        $(window).click(function (e) {
+            if (e.target.className == "popup_container show") {
+                $(".popup_container").removeClass("show");
+            }
+        })
+    </script>
+</body>
+
+</html>
