@@ -17,215 +17,121 @@ body {
           align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #4080fe;
+  position: relative;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1120px;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.container .row .youtube_video {
+  width: 60%;
+  background-color: #000;
+  position: relative;
+  padding-bottom: 33.25%;
+  height: 0;
+}
+
+.container .row .youtube_video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .row .details {
+  width: 38%;
+  margin-left: 2%;
+  padding-left: 20px;
+}
+
+.container .row .details span {
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.container .row .details p {
+  font-size: 35px;
   font-family: "Arvo";
 }
 
-.formContainer {
-  display: block;
-  width: 300px;
-  height: 600px;
-  background-color: #fff;
-  border-radius: 25px;
-  position: relative;
-}
-
-.formContainer .sign_up {
-  width: 90%;
-  height: 95%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: #4080fe;
+.container .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .gallery .item {
+  width: calc(96% / 4);
+  position: relative;
+}
+
+.container .gallery .item img {
+  width: 100%;
+  display: block;
+}
+
+.container .gallery .item .youtube_icon {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-radius: 25px;
-}
-
-.formContainer .sign_up .round_corner {
-  position: absolute;
-  background-color: #fff;
-  width: 150px;
-  height: 30px;
-  border-radius: 25px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  top: -12px;
-}
-
-.formContainer .sign_up h2 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 50px;
-}
-
-form {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-}
-
-form .input_field {
-  position: relative;
-  color: #fff;
-  width: 100%;
-}
-
-form .input_field + .input_field {
-  margin-top: 15px;
-}
-
-form .input_field p {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-
-form .input_field .input_ {
-  width: 100%;
-  height: 40px;
-  background-color: #4166ff;
-  border: none;
-  outline: none;
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-form .input_field .input_::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
-}
-
-form .input_field .input_:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
-}
-
-form .input_field .input_::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
-}
-
-form .input_field .input_::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
-}
-
-form .submit {
-  width: 200px;
-  height: 50px;
-  background-color: #4080fe;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 25px;
-  -webkit-box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  margin-top: 35px;
-  margin-bottom: 10px;
   cursor: pointer;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-.have_account {
-  text-decoration: none;
-  color: #fff;
-  font-size: 12px;
-  position: absolute;
-  bottom: 35px;
+.container .gallery .item .youtube_icon:hover {
+  background-color: rgba(0, 0, 0, 0);
 }
 
-#alert_box {
-  visibility: hidden;
-  min-width: 200px;
-  margin-left: -100px;
-  background-color: red;
-  color: #fff;
-  text-align: center;
-  border-radius: 25px;
-  padding: 15px;
-  position: fixed;
-  left: 50%;
-  bottom: 30px;
-  font-size: 16px;
-  z-index: 2;
+.container .gallery .item .youtube_icon.active {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 5px 5px 10px;
+          box-shadow: 5px 5px 10px;
 }
 
-.show {
-  visibility: visible !important;
-  -webkit-animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
-          animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+.container .gallery .item .youtube_icon.active img {
+  opacity: 0;
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0px;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0px;
-    opacity: 0;
-  }
-}
-
-.sign_in {
-  margin-left: 50px;
+.container .gallery .item .youtube_icon img {
+  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */
