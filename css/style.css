@@ -1,111 +1,46 @@
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-  text-align: center;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-size: 5vh;
-  margin: 4vh 0;
-  color: tomato;
+    font-size: 5vw;
+    text-transform: uppercase;
+    margin: 15px 0;
+    text-align: center;
 }
 
-.lazy_wrapper {
-  position: relative;
-  background-color: #eee;
-  padding-bottom: 91%;
+.horizontal_slider {
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #eee;
 }
 
-.lazy_wrapper img {
-  width: 100%;
-  display: block;
-  position: absolute;
+/*this is for chrome / firefox/ opera and safari*/
+.horizontal_slider::-webkit-scrollbar {
+    display: none;
 }
 
-.loading__ img {
-  opacity: 0;
+/* for ms*/
+.horizontal_slider {
+    -ms-overflow-style: none;
 }
 
-.loader {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 1;
+.slider_container {
+    display: block;
+    white-space: nowrap;
 }
 
-.loader .point {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  -webkit-animation: bounce 1s infinite ease-in-out;
-          animation: bounce 1s infinite ease-in-out;
+.item {
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.loader .point + .point {
-  margin-left: 10px;
+.item img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
 }
-
-.loader .point.one {
-  background-color: tomato;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.loader .point.two {
-  background-color: red;
-  -webkit-animation-delay: .1s;
-          animation-delay: .1s;
-}
-
-.loader .point.three {
-  background-color: blue;
-  -webkit-animation-delay: .2s;
-          animation-delay: .2s;
-}
-
-@-webkit-keyframes bounce {
-  0%, 100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-  }
-}
-
-.mb_20 {
-  margin-bottom: 20px;
-}
-/*# sourceMappingURL=style.css.map */
