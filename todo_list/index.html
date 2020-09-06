@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevAmit :: to do list</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="todo_">
+        <div class="todo_list">
+            <div class="todo_head">
+                Website to do lists
+            </div>
+            <div class="input_">
+                <input type="text" placeholder="Add Task" class="todo_input">
+                <div class="add_btn">Add Task</div>
+            </div>
+            <div class="todo_container">
+                <div class="todo_item">
+                    <span class="item_">
+                        Styleguide Creation
+                    </span>
+                </div>
+            </div>
+            <div class="todo_btn">
+                + New Task
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //show input box;
+            $(".todo_btn").click(function () {
+                $(".input_").css("display", "block");
+            })
+            //add done mark on to do item
+            $(document).on("click", ".todo_item .item_", function () {
+                $(this).toggleClass("done");
+
+                //adding and removing delete icon
+                if ($(this).hasClass("done")) {
+                    $(this).parent(".todo_item").append(`
+                        <i class="fa fa-trash-o"></i>
+                    `)
+                }
+                else {
+                    $(this).parent(".todo_item").children(".fa").remove();
+                }
+            })
+
+            //if container will be blank
+            function blank_item() {
+                if ($(".todo_item").length == 0) {
+                    $(".todo_container").html(`
+                        <p class="empty_task">Please add new task</p>
+                    `)
+                }
+            }
+
+            //removing task
+            $(document).on("click", ".fa", function () {
+                $(this).parent().remove();
+                blank_item()
+            })
+
+            //add todo
+            $(".add_btn").click(function () {
+                let todo_input = $(".todo_input").val();
+                //fir check input value is blank or not
+                if (todo_input.length <= 0) {
+                    alert("Please Add Task")
+                    $(".todo_input").focus();
+                }
+                else {
+                    //check if empty message is appear or not
+                    if ($(".todo_container").children(".empty_task")) {
+                        $(".empty_task").remove();
+                    }
+                    // add to do list
+                    $(".todo_container").append(`
+                        <div class="todo_item">
+                            <span class="item_">
+                               ${todo_input}
+                            </span>
+                        </div>
+                    `)
+                    $(".todo_input").val("");
+                    $(".todo_input").focus();
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>
