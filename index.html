@@ -4,39 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Simple Login and Resigter form</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery3.1.0.min.js"></script>
-    <script src="js/isotope.js"></script>
 </head>
 
 <body>
-    <div class="button-group filter-button-group">
-        <button data-filter="*">show all</button>
-        <button data-filter=".metal">metal</button>
-        <button data-filter=".transition">transition</button>
-        <button data-filter=".alkali, .alkaline-earth">alkali & alkaline-earth</button>
-        <button data-filter=":not(.transition)">not transition</button>
-        <button data-filter=".metal:not(.transition)">metal but not transition</button>
-        <div class="wrapper">
-            <div class="metal">metal</div>
-            <div class="metal transition alkali">metal</div>
-            <div class="metal transition">metal</div>
-            <div class="metal alkali">metal</div>
+    <div class="formContainer">
+        <div id="sign_up" class="sign_up">
+            <div class="round_corner"></div>
+            <div id="alert_box">
+                please enter username
+            </div>
+            <h2>Sign Up</h2>
+            <form>
+                <div class="input_field">
+                    <p>Username</p>
+                    <input type="text" placeholder="Username" class="input_ username">
+                </div>
+                <div class="input_field">
+                    <p>Email</p>
+                    <input type="text" placeholder="Email" class="input_ email">
+                </div>
+                <div class="input_field">
+                    <p>Password</p>
+                    <input type="password" placeholder="password" class="input_ password">
+                </div>
+                <div class="submit">Sign Up</div>
+            </form>
+            <a href="#" class="have_account">Already have an Account?</a>
+        </div>
+    </div>
+    <div class="formContainer sign_in">
+        <div class="sign_up">
+            <div class="round_corner"></div>
+            <h2>Sign In</h2>
+            <form>
+                <div class="input_field">
+                    <p>Email</p>
+                    <input type="text" placeholder="Email" class="input_ email">
+                </div>
+                <div class="input_field">
+                    <p>Password</p>
+                    <input type="password" placeholder="password" class="input_ password">
+                </div>
+                <div class="submit">Sign In</div>
+            </form>
+            <a href="#" class="have_account">Not a member yet? Sign Up!</a>
         </div>
     </div>
     <script>
-        // init Isotope
-        var $grid = $('.grid').isotope({
-            // options
-        });
-        // filter items on button click
-        $('.filter-button-group').on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue });
-        });
+        $(document).ready(function () {
+            //below funciton for if user not set her / his name, email or password
+            function alertBox() {
+                let alertBox = document.getElementById("alert_box");
+
+                alertBox.className = "show";
+                setTimeout(function () {
+                    alertBox.className = alertBox.className.replace("show", "");
+                }, 3000);
+            };
+            $("#sign_up .submit").click(function () {
+                let userName = $(".username").val();
+                let email = $(".email").val();
+                let password = $(".password").val();
+                //I am using simple validation
+                if (userName.length <= 0) {
+                    $("#alert_box").html("please enter username").css("background-color", "red");
+                    alertBox()
+                } else if (email.length <= 0) {
+                    $("#alert_box").html("please enter email").css("background-color", "red");
+                    alertBox()
+                } else if (password.length <= 8) {
+                    $("#alert_box").html("please enter password").css("background-color", "red");
+                    alertBox()
+                } else {
+                    $("#alert_box").html("Thank You").css("background-color", "green");
+                    alertBox()
+                }
+
+
+            })
+        })
     </script>
 </body>
 
