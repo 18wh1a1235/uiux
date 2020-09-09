@@ -4,134 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Club</title>
+    <title>Circle Progress</title>
     <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery3.1.0.min.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/animation.gsap.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="nav">
-            <div class="navigaiton">
-                <nav>
-                    <a href="#">
-                        <span></span>
-                        Free Fit
-                    </a>
-                    <ul>
-                        <li>About</li>
-                        <li>Format</li>
-                        <li>Gallery</li>
-                        <li>Review</li>
-                        <li>Contacts</li>
-                    </ul>
-                </nav>
-                <div class="contact_">
-                    <p>00 0000 0000 </p>
-                    <p>Order Call</p>
-                </div>
-            </div>
+    <h2>Circle Progress</h2>
+    <div class="flex_">
+        <div class="flex_item">
+            <svg class="circle_progress" viewBox="0 0 36 36">
+                <path class="circle_path" d="M18 2a16 16 0 010 32 16 16 0 010-32" stroke-dasharray="65, 100"></path>
+                <text class="circle_text" x="50%" y="50%">65%</text>
+            </svg>
         </div>
-        <div class="circle">
-            <div class="second_circle"></div>
+        <div class="flex_item">
+            <svg class="circle_progress" viewBox="0 0 36 36">
+                <path class="circle_path" d="M18 2a16 16 0 010 32 16 16 0 010-32" stroke-dasharray="25, 100"></path>
+                <text class="circle_text" x="50%" y="50%">25%</text>
+            </svg>
         </div>
-        <img class="abs_img" src="images/1.png">
-        <div class="info">
-            <h2>Franchise<br>Fitness Club</h2>
-            <p>Lorem ipsum dolor sit amet consectetur
-                <br>adipisicing elit. Quod modi aliquid minima
-                <br>at esse dicta culpa ipsam</p>
-            <div class="cta">Learn More</div>
+        <div class="flex_item">
+            <svg class="circle_progress" viewBox="0 0 36 36">
+                <path class="circle_path" d="M18 2a16 16 0 010 32 16 16 0 010-32" stroke-dasharray="100, 100"></path>
+                <text class="circle_text" x="50%" y="50%">100%</text>
+            </svg>
         </div>
-        <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="flex_item">
+            <svg class="circle_progress" viewBox="0 0 36 36">
+                <path class="circle_path" d="M18 2a16 16 0 010 32 16 16 0 010-32" stroke-dasharray="75, 100"></path>
+                <text class="circle_text" x="50%" y="50%">75%</text>
+            </svg>
         </div>
-        <div class="info_right">
-            <h3>Comfortable Solution</h3>
-            <p>Lorem ipsum dolor sit amet consectetur,
-                <br>adipisicing elit. Consequuntur,
-                <br>deserunt? Iusto, enim maxime! </p>
+        <div class="flex_item">
+            <svg class="circle_progress" viewBox="0 0 36 36">
+                <path class="circle_path" d="M18 2a16 16 0 010 32 16 16 0 010-32" stroke-dasharray="50, 100"></path>
+                <text class="circle_text" x="50%" y="50%">50%</text>
+            </svg>
         </div>
     </div>
-    <script>
-        const header = document.querySelector(".nav");
-        const circle_ = document.querySelector(".circle");
-        const abs_img = document.querySelector(".abs_img");
-        const infoP = document.querySelector(".info p");
-        const cta = document.querySelector(".cta");
-        const info_right = document.querySelector(".info_right p");
-        const head1 = document.querySelector(".info h2");
-        const head2 = document.querySelector(".info_right h3");
-        const social = document.querySelector(".social");
-
-        const effectTL = gsap.timeline();
-        //for nav
-        effectTL.from(header, {
-            delay: .2,
-            y: 16,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.inOut"
-        })
-
-            //for circle
-            .from(circle_, {
-                delay: -0.2,
-                y: 16,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.inOut"
-
-            })
-            //for big image
-            .from(abs_img, {
-                delay: -0.4,
-                x: -100,
-                skewX: 2,
-                duration: 0.8,
-                opacity: 0,
-                ease: "power3.out"
-            })
-            //for bold headline
-            .from([head1, head2], {
-                delay: -0.6,
-                y: -40,
-                duration: 0.8,
-                opacity: 0,
-                ease: "power3.out",
-                stagger: {
-                    amount: 0.2
-                }
-            })
-            //for paragraph and button
-            .from([infoP, cta, info_right], {
-                delay: -0.6,
-                y: -40,
-                duration: 0.8,
-                opacity: 0,
-                ease: "power3.out",
-                stagger: {
-                    amount: 0.2
-                }
-            })
-            //for social media
-            .from(social, {
-                delay: -0.7,
-                y: 16,
-                duration: 0.8,
-                opacity: 0,
-                ease: "power3.out"
-            })
-
-            //please subscribe my channel 
-            //thank you;
-    </script>
 </body>
 
 </html>
