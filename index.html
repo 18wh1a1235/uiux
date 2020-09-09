@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Club</title>
+    <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,122 +15,161 @@
 
 <body>
     <div class="container">
-        <div class="nav">
-            <div class="navigaiton">
-                <nav>
-                    <a href="#">
-                        <span></span>
-                        Free Fit
+        <div class="nav_wrapper">
+            <div class="logo">
+                Dev<span>A</span>mit
+            </div>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header_wrapper">
+            <div class="scroll_down">Scroll Down</div>
+        </div>
+        <div class="navigation__overlay">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="navigation__items">
+                <div class="navigation__container">
+                    <div class="navigation__link">
+                        <a href="#" class="active" data-number="1">home</a>
+                    </div>
+                    <div class="navigation__link">
+                        <a href="#" data-number="2">about</a>
+                    </div>
+                    <div class="navigation__link">
+                        <a href="#" data-number="3">work</a>
+                    </div>
+                    <div class="navigation__link">
+                        <a href="#" data-number="4">portfolio</a>
+                    </div>
+                    <div class="navigation__link">
+                        <a href="#" data-number="5">contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation__social">
+                <a href="#" class="social-link">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="copyright-wrapper">
+                <p class="copyright">@2020: Dev Amit Jha</p>
+            </div>
+        </div>
+
+        <div class="content_area">
+            <div class="info">
+                <div class="dot">
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                    <div class="dot_"></div>
+                </div>
+                <h2 class="effect_1">Creative <span class="outline">designer</span></h2>
+                <h2 class="effect_2"><span class="outline">&</span> developer</h2>
+                <p>Hi I'm Dev Amit Jha, a passionate Front-end Developer & UI/UX Designer <br>based in the Mumbai(India)
+                </p>
+                <div class="cta">
+                    <span>View my work<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="social_">
+                    <a href="#" class="social-link">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
-                    <ul>
-                        <li>About</li>
-                        <li>Format</li>
-                        <li>Gallery</li>
-                        <li>Review</li>
-                        <li>Contacts</li>
-                    </ul>
-                </nav>
-                <div class="contact_">
-                    <p>00 0000 0000 </p>
-                    <p>Order Call</p>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="circle">
-            <div class="second_circle"></div>
-        </div>
-        <img class="abs_img" src="images/1.png">
-        <div class="info">
-            <h2>Franchise<br>Fitness Club</h2>
-            <p>Lorem ipsum dolor sit amet consectetur
-                <br>adipisicing elit. Quod modi aliquid minima
-                <br>at esse dicta culpa ipsam</p>
-            <div class="cta">Learn More</div>
-        </div>
-        <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-        <div class="info_right">
-            <h3>Comfortable Solution</h3>
-            <p>Lorem ipsum dolor sit amet consectetur,
-                <br>adipisicing elit. Consequuntur,
-                <br>deserunt? Iusto, enim maxime! </p>
-        </div>
+
     </div>
     <script>
-        const header = document.querySelector(".nav");
-        const circle_ = document.querySelector(".circle");
-        const abs_img = document.querySelector(".abs_img");
+        const header = document.querySelector(".nav_wrapper");
+        const dot = document.querySelector(".dot");
+        const effect_1 = document.querySelector(".effect_1");
+        const effect_2 = document.querySelector(".effect_2");
         const infoP = document.querySelector(".info p");
         const cta = document.querySelector(".cta");
-        const info_right = document.querySelector(".info_right p");
-        const head1 = document.querySelector(".info h2");
-        const head2 = document.querySelector(".info_right h3");
-        const social = document.querySelector(".social");
-
+        const social_ = document.querySelectorAll(".social-link");
         const effectTL = gsap.timeline();
-        //for nav
         effectTL.from(header, {
-            delay: .2,
-            y: 16,
+            delay: .1,
+            y: -16,
             opacity: 0,
             duration: 0.8,
-            ease: "power3.inOut"
+            ease: "power3.InOut"
         })
-
-            //for circle
-            .from(circle_, {
-                delay: -0.2,
+            .from(dot, {
+                delay: -0.6,
                 y: 16,
                 opacity: 0,
                 duration: 0.8,
-                ease: "power3.inOut"
-
+                ease: "power3.InOut"
             })
-            //for big image
-            .from(abs_img, {
-                delay: -0.4,
-                x: -100,
-                skewX: 2,
-                duration: 0.8,
+            .from([effect_1, effect_2, infoP, cta], {
+                delay: -0.1,
+                y: 40,
                 opacity: 0,
-                ease: "power3.out"
-            })
-            //for bold headline
-            .from([head1, head2], {
-                delay: -0.6,
-                y: -40,
                 duration: 0.8,
-                opacity: 0,
-                ease: "power3.out",
+                ease: "power3.InOut",
                 stagger: {
-                    amount: 0.2
+                    amount: 0.4
                 }
             })
-            //for paragraph and button
-            .from([infoP, cta, info_right], {
+            .from(social_, {
                 delay: -0.6,
-                y: -40,
-                duration: 0.8,
+                x: -16,
                 opacity: 0,
-                ease: "power3.out",
+                duration: .3,
+                ease: "power3.InOut",
                 stagger: {
-                    amount: 0.2
+                    amount: 0.5
                 }
             })
-            //for social media
-            .from(social, {
-                delay: -0.7,
-                y: 16,
-                duration: 0.8,
-                opacity: 0,
-                ease: "power3.out"
-            })
 
-            //please subscribe my channel 
-            //thank you;
+        //please subscribe my channel
+        //thank you
+
+        $(document).ready(function () {
+            $(".menu").click(function () {
+                $(this).toggleClass("active");
+                $(".navigation__overlay").toggleClass("active");
+                $(".navigation__container").toggleClass("active");
+                $(".navigation__social").toggleClass("active");
+                $(".copyright-wrapper").toggleClass("active");
+            })
+        })
     </script>
 </body>
 
